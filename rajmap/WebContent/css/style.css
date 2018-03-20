@@ -21,3 +21,35 @@ body{
 	margin: 0;
 	padding: 0;
 }
+
+/* booking.jsp */
+.table-width {
+    width: 70%;
+    margin-left: 10%;
+}
+
+.table-row {
+    /* removes the highlighted line separating the rows */
+    border-bottom: 0px !important;
+}
+
+
+.inputHeight {
+    /* reduce the height of input field so 1st & 2nd col appear in same line */
+    height: 2rem !important;
+}
+
+.firstCol {
+    /* reduce the width of 1st column of table */
+    width: 200px !important;
+}
+
+.book-ticket-btn{
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+form{
+display:flex;
+  align-items: center;
+  justify-content: center;flex-direction:column
+}

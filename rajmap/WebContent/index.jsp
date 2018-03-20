@@ -22,7 +22,6 @@
 		Connection con=DBInfo.getConn();	
 		PreparedStatement ps=con.prepareStatement(query);
 		ResultSet res=ps.executeQuery();
-	
 %>
 
 
@@ -38,14 +37,15 @@
 			let mapZoomStatus=false;
         	var features = [
           <%
-		      	while(res.next())
+          		while(res.next())
 				{
 		  %>
 					{
 			            position: new google.maps.LatLng(<%=res.getDouble(4)%>,<%=res.getDouble(5)%>),
 			            type: "<%=res.getString(8)%>",
 			            title: "<%=res.getString(2)%>",
-			            description: "<%=res.getString(3)%>"
+			            description: "<%=res.getString(3)%>",
+			            location_id: "<%=res.getInt(1)%>"
 			          },
 		  <%
 				}
@@ -78,10 +78,8 @@
 	            map: map,
 	            title: feature.title
 	          });
-	       console.log(feature);
-	 		marker.addListener("click",function(){
-				
-	 			
+	       
+	 		marker.addListener("click",function(){	
 	 			let contentString =
 					'<div id="content">' +
 					'<div id="siteNotice">' +
@@ -89,7 +87,7 @@
 					'<h6 id="firstHeading" class="firstHeading">'+feature.title +'</h6>' +
 					'<div id="bodyContent">' +
 					"<p>"+feature.description+"</p>" +
-					'<p><a href="booking.jsp?location_id="++"Uluru">' +
+					'<p><form action="booking.jsp" method="post"><input type="hidden" name="id" value='+feature.location_id+'><input type="submit" class="btn-flat"></form>' +
 					"Book Tickets</a></p>" +
 					"</div>" +
 					"</div>";
@@ -117,13 +115,7 @@
 						
 			})
 				        });
-
-		/* info window */
-	
 	}
-		
-		
-	
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1veb894TYsp0Vzgj4QFcr-aCI3WZ0c5c&callback=initMap">
     </script>
