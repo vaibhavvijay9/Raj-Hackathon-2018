@@ -20,6 +20,7 @@ img{
 body{
 	margin: 0;
 	padding: 0;
+	background: url("../images/background.gif");
 }
 
 /* booking.jsp */
@@ -48,6 +49,11 @@ body{
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
+
+.book-ticket-link{
+	color: #0000EE;
+}
+
 form{
 display:flex;
   align-items: center;

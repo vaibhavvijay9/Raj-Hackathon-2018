@@ -4,13 +4,13 @@
 <html lang="en">
 
 <head>
-    <title>Document</title>
+    <title>Rajasthan Tourism</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
     <link rel='stylesheet' type='text/css' href='css/style.css'>
-    <link rel="icon" href="images/favicon.ico" sizes="16x16" type="image/x-icon">
+    <link rel="icon" href="images/f.png" sizes="16x16" type="image/x-icon">
 </head>
 <%
 	String location_name,description;
@@ -28,7 +28,7 @@
 <body>
 	<nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="#" class="brand-logo">Rajasthan Tourism</a>
     </div>
   </nav>
 	<div id="map"></div>
@@ -86,11 +86,9 @@
 					"</div>" +
 					'<h6 id="firstHeading" class="firstHeading">'+feature.title +'</h6>' +
 					'<div id="bodyContent">' +
-					"<p>"+feature.description+"</p>" +
-					'<p><form action="booking.jsp" method="post"><input type="hidden" name="id" value='+feature.location_id+'><input type="submit" class="btn-flat"></form>' +
-					"Book Tickets</a></p>" +
-					"</div>" +
-					"</div>";
+					"<p>"+feature.description+
+					'<form action="booking.jsp" method="post"><input type="hidden" name="id" value='+feature.location_id+'><input type="submit" class="btn-flat book-ticket-link" value="Book Tickets"></form>' +
+					"</p></div></div>";
 					let infowindow = new google.maps.InfoWindow({
 					content: contentString
 					});

@@ -4,18 +4,17 @@
 <html lang="en">
 
 <head>
-    <title>Document</title>
+    <title>Rajasthan Tourism</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
     <link rel='stylesheet' type='text/css' href='css/style.css'>
-    <link rel="icon" href="images/favicon.ico" sizes="16x16" type="image/x-icon">
+    <link rel="icon" href="images/f.png" sizes="16x16" type="image/x-icon">
 </head>
 <% 
 	String id=(String)request.getParameter("id");
 	int location_id=Integer.parseInt(""+id);
-	System.out.println(location_id);
 	String place="";
 	String description="";
 	String image_url="";
@@ -53,8 +52,8 @@
                 <td><input class='inputHeight'  name="place" value="<%=place%>" type="text" readonly></td>
             </tr>
             <tr class='table-row'>
-                <td class='firstCol'>Amount</td>
-                <td><input class='inputHeight' name="per_amount" value="Rs.<%=fare%> (Per Person)" type="text" readonly></td>
+                <td class='firstCol'>Amount(per Person(Rs.))</td>
+                <td><input class='inputHeight' name="per_amount" value="<%=fare%>" type="text" readonly></td>
             </tr>
             <tr class='table-row'>
                 <td class='firstCol'>Name</td>
