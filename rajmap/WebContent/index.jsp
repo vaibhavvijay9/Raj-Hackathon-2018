@@ -24,7 +24,6 @@
 		ResultSet res=ps.executeQuery();
 %>
 
-
 <body>
 	<nav>
     <div class="nav-wrapper">
@@ -48,8 +47,7 @@
 			            location_id: "<%=res.getInt(1)%>"
 			          },
 		  <%
-				}
-				
+				}				
 				con.close();
 				}
 				catch(Exception e)

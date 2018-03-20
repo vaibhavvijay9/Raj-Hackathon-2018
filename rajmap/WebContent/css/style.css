@@ -1,5 +1,11 @@
 nav{
 	background: #6A84E9;
+	background: -webkit-linear-gradient(top, rgba(106, 132, 233, 0.8) 0, transparent 100%);
+}
+
+.brand-logo{
+	margin-left:3%;
+	color:#142D37 !important;
 }
 
 .home-content{
@@ -7,9 +13,9 @@ nav{
 }
 
 #map {
-    height: 600px;
+    height: 580px;
     width: 80%;
-    margin: 0 auto;
+    margin: 5px auto;
     /* border:1px solid black; */
 }
 
@@ -21,6 +27,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background: url("../images/background.gif");
+	user-select:none;
 }
 
 /* booking.jsp */
