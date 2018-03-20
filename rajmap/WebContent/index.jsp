@@ -35,15 +35,17 @@
 	<div id="map"></div>
     <script>
         function initMap() {
-		var features = [
+			let mapZoomStatus=false;
+        	var features = [
           <%
 		      	while(res.next())
 				{
 		  %>
 					{
 			            position: new google.maps.LatLng(<%=res.getDouble(4)%>,<%=res.getDouble(5)%>),
-			            type: 'parking',
-			            name: "+<%=res.getString(2)%>+"
+			            type: "<%=res.getString(8)%>",
+			            title: "<%=res.getString(2)%>",
+			            description: "<%=res.getString(3)%>"
 			          },
 		  <%
 				}
@@ -54,49 +56,74 @@
 				{
 					e.printStackTrace();
 				}
-          %>
-			
-		  {
-            position: new google.maps.LatLng(25.75654, 73.5224),
-            type: 'info'
-          } 
+				%> 
 		]
+		
 		var map = new google.maps.Map(document.getElementById('map'), {
 			zoom: 6.5,
 			center: new google.maps.LatLng(27.199824, 75.756018),
 		});
 		var iconBase = 'https://farm5.staticflickr.com/';
 		var icons = {
-		  parking: {
-			icon: iconBase+'4780/25840759007_e45d18e8a9_s.jpg'
+		  palace: {
+			icon: iconBase+'4772/40020335645_8691104d20_s.jpg'
 		  },
-		  info:{
-		  icon:iconBase+'4774/38902265840_ce6df30616_s.jpg'
-		}};
+		  wildlife: {
+			icon: iconBase+'802/40914044941_d676cc1edd_s.jpg'
+		  }};
 		features.forEach(function(feature) {
-	        var marker = new google.maps.Marker({
+	       var  marker = new google.maps.Marker({
 	            position: feature.position,
 	            icon: icons[feature.type].icon,
-	            map: map
+	            map: map,
+	            title: feature.title
 	          });
-	        });
-		var centerMarker = new google.maps.Marker({
-			  map: map,
-			  position: new google.maps.LatLng(26.441225998987104,73.72184121250007),
-			  title: 'Some location'
-			});
-		// Add circle overlay and bind to marker
-		/* var circle = new google.maps.Circle({
-		  map: map,
-		  radius: 425000,    // 10 miles in metres
-		  fillColor: '#A9DBA5',
-		  fillOpacity: 0.35,
-		  strokeColor: '#9AC896',
-          strokeOpacity: 1,
-          strokeWeight: 1
-          });
-		circle.bindTo('center', centerMarker, 'position');
-       */ } 
+	       console.log(feature);
+	 		marker.addListener("click",function(){
+				
+	 			
+	 			let contentString =
+					'<div id="content">' +
+					'<div id="siteNotice">' +
+					"</div>" +
+					'<h6 id="firstHeading" class="firstHeading">'+feature.title +'</h6>' +
+					'<div id="bodyContent">' +
+					"<p>"+feature.description+"</p>" +
+					'<p><a href="booking.jsp?location_id="++"Uluru">' +
+					"Book Tickets</a></p>" +
+					"</div>" +
+					"</div>";
+					let infowindow = new google.maps.InfoWindow({
+					content: contentString
+					});
+						
+				/* zoom-in & zoom-out */
+
+				console.log(mapZoomStatus)
+				if (!mapZoomStatus) 
+				{
+					infowindow.open(map,marker);
+					map.setZoom(8.5);
+					map.setCenter(marker.getPosition());
+					mapZoomStatus = true;
+				} 
+				else 
+				{
+					infowindow.close(map, marker);
+					map.setZoom(6.5);
+					map.setCenter(marker.getPosition());
+					mapZoomStatus = false;
+				}
+						
+			})
+				        });
+
+		/* info window */
+	
+	}
+		
+		
+	
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1veb894TYsp0Vzgj4QFcr-aCI3WZ0c5c&callback=initMap">
     </script>
