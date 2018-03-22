@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
     <link rel='stylesheet' type='text/css' href='css/style.css'>
-    <link rel="icon" href="images/f.png" sizes="16x16" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/x-icon">
 </head>
 <% 
 	String id=(String)request.getParameter("id");
@@ -80,8 +80,7 @@
    	</button>
        </form>
     </div>
-	
-	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
 	<script src="js/index.js"></script>

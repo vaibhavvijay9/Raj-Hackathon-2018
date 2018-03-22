@@ -1,15 +1,13 @@
 <!DOCTYPE HTML>
-<%@page import="rajmap.Checksum"%>
 <%@page import="java.time.format.DateTimeFormatter"%>
 <%@page import="java.time.LocalDateTime"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Vector"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.*"%>
 <%@page import="rajmap.DBInfo"%>
-<%@page import="java.sql.Connection"%>
-<html>
+<%@page import="qrcode.*"%>
 
+<html>
 
 <head>
 	<title>Rajasthan Tourism</title>
@@ -18,7 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
     <link rel='stylesheet' type='text/css' href='css/style.css'>
-    <link rel="icon" href="images/f.png" sizes="16x16" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/x-icon">
 </head>
 
 <body>
@@ -34,8 +32,9 @@
     	
     	
     	String PRN=Integer.toString((int)(Math.random()*999999999)+1000000);
-     	
-     	
+        session.setAttribute("PRN",PRN);
+        session.setAttribute("email",email);
+
      	//here we insert into the bookings table
      	String query="insert into bookings values(?,?,?,?,?,?,?,?,?,?)";
 		try
@@ -55,6 +54,8 @@
 			int flag=ps.executeUpdate();
 			
 			con.close();
+            
+			new InsertBean().createQR(PRN);
 		}
 		catch(Exception e)
 		{
@@ -63,7 +64,7 @@
      %>
         <div class=" container hire-form">
             <h4 class="center">Booking Details</h4>
-            <form class="col s12" action="finish.jsp" method="post">
+            <form class="col s12" action="finish.jsp" method="POST">
             <table class="table-width">
                 <tr class='table-row'>
                     <td class="firstCol">Place</td>
@@ -92,16 +93,12 @@
                 <tr class='table-row'>
                     <td class="firstCol">Amount</td>
                     <td><input class="inputHeight" value="<%=amount%>" type="text" readonly></td>
-                </tr>
-                <tr class='table-row'>
-                    <td class="firstCol">Mode of Payment</td>
-                    <td><input class="inputHeight" value="Cash" type="text" readonly></td>
                 </tr>    
             </table>
 			<button type="submit" class="waves-effect waves-light btn hire-me-btn right">Proceed To Pay</button>
 			</form>
     
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
     <script src='js/index.js'></script>
 </body>

@@ -1,14 +1,14 @@
-nav{
+nav {
 	background: #6A84E9;
 	background: -webkit-linear-gradient(top, rgba(106, 132, 233, 0.8) 0, transparent 100%);
 }
 
-.brand-logo{
+.brand-logo {
 	margin-left:3%;
 	color:#142D37 !important;
 }
 
-.home-content{
+.home-content {
 	display: flex;
 }
 
@@ -19,18 +19,19 @@ nav{
     /* border:1px solid black; */
 }
 
-img{
-	width: 100%;
-	
+img {
+	width: 100%;	
 }
-body{
+
+body {
 	margin: 0;
 	padding: 0;
 	background: url("../images/background.gif");
-	user-select:none;
+	user-select : none;
 }
 
 /* booking.jsp */
+
 .table-width {
     width: 70%;
     margin-left: 10%;
@@ -40,7 +41,6 @@ body{
     /* removes the highlighted line separating the rows */
     border-bottom: 0px !important;
 }
-
 
 .inputHeight {
     /* reduce the height of input field so 1st & 2nd col appear in same line */
@@ -52,17 +52,18 @@ body{
     width: 200px !important;
 }
 
-.book-ticket-btn{
+.book-ticket-btn {
 	margin: 0 auto;
 	margin-bottom: 20px;
 }
 
-.book-ticket-link{
+.book-ticket-link {
 	color: #0000EE;
 }
 
 form{
-display:flex;
-  align-items: center;
-  justify-content: center;flex-direction:column
+	display:flex;
+  	align-items: center;
+  	justify-content: center;
+  	flex-direction:column;
 }

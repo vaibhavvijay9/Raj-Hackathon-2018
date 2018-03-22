@@ -28,6 +28,9 @@
 	<nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Rajasthan Tourism</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="verify.jsp">Verify</a></li>
+      </ul>
     </div>
   </nav>
 	<div id="map"></div>
@@ -110,7 +113,7 @@
 				}
 						
 			})
-				        });
+		});
 	}
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1veb894TYsp0Vzgj4QFcr-aCI3WZ0c5c&callback=initMap">
