@@ -1,0 +1,3 @@
+NOTE: Change the username and password in "rajmap\src\rajmap"--->SendInlineImagesInEmail.java and then compile it.
+
+. Images are hosted on flickr.com (and url in database)

@@ -17,9 +17,9 @@ public class SendInlineImagesInEmail
 {
    public void SendMail(String to)throws Exception 
    {
-      String from = "peoplebloodbank@gmail.com";
-      final String username = "peoplebloodbank@gmail.com";//change accordingly
-      final String password = "materialize";//change accordingly
+      String from = "your_email@gmail.com";
+      final String username = "your_email@gmail.com";//change accordingly
+      final String password = "your_password";//change accordingly
 
       String host = "smtp.gmail.com";
  
