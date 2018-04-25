@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/css/materialize.min.css">
     <link rel='stylesheet' type='text/css' href='css/style.css'>
-    <link rel="icon" href="images/wwb.png" type="image/x-icon">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
 <%
 	String location_name,description;

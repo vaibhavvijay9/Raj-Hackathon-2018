@@ -67,3 +67,8 @@ form{
   	justify-content: center;
   	flex-direction:column;
 }
+
+.verify-image{
+	width: 300px;
+	height: 200px;	
+}

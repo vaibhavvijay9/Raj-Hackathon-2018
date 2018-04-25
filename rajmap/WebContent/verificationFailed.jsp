@@ -15,13 +15,14 @@
  
 <body class='center'>
 	<div class="center">
-    	<img src="images/denial.png" width="300" height="200"/>
+    	<img class='verify-image' src="images/denied.png"/>
     </div>
     <br><br>
     
-        <h2>Verification Failed ! It seems you have already used this ticket or it is not a valid ticket.<br><br></h2>
-        You may contact at Office for help. Thank You !<br><br>
-        <a href="verify.jsp">BACK</a>
+        <h3>Verification Failed ! It seems you have already used this ticket or it is not a valid ticket.<br><br></h2>
+        You may contact at Office for help. Thank You !</h3><br><br>
+        <a href="verify.jsp">BACK</a><br>
+        <a href="index.jsp">HOME</a>
 </body>
 
 </html>

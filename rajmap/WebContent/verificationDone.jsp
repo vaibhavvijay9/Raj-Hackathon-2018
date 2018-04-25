@@ -15,13 +15,13 @@
 
  <body class='center'>
 	<div class='center'>
-    	<img src="images/verified.png" width="300" height="200"/>
+    	<img class='verify-image' src="images/verified.png"/>
     </div>
     <br><br>
     
-        <h1>Verified !</h1><br></br>
-        <h2>
-           <%=session.getAttribute("name")%> along with <%=session.getAttribute("persons")%> verified to Enter !
+        <h2>Verified !</h2><br></br>
+        <h3>
+           <%=session.getAttribute("name")%> along with <%=session.getAttribute("persons")%> people verified to Enter !
            <%
 	           String PRN=String.valueOf(session.getAttribute("PRN"));
 	           Connection con=DBInfo.con;
@@ -39,7 +39,8 @@
 	           }  
                session.invalidate();
             %>
-        </h2>
-        <a href="verify.jsp">BACK</a>
+        </h3>
+        <a href="verify.jsp">BACK</a><br>
+        <a href="index.jsp">HOME</a>
 </body>
 </html>
